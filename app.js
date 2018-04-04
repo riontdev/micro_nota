@@ -3,6 +3,8 @@ const app = express()
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const apiRouter = require('./router/apiRouter')
+const estudianteRouter = require('./router/estudianteRouter')
+const routeHelpers = require('./helpers/microApi');
 //DB setup
 mongoose.connect('mongodb://mongo:27017')
 const db = mongoose.connection
@@ -19,11 +21,13 @@ app.use((req, res, next) => {
 
 
 
-app.get('/', function(req, res){
- res.send('Hello World - changed - 2')
+app.get('/', routeHelpers.testApi, (req, res, next) => {
+    console.log(req.body)
+    res.send(JSON.stringify({ list: req.body}))
 });
 
 app.use('/api', apiRouter);
+app.use('/estudiante', estudianteRouter);
 
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!')
