@@ -1,0 +1,21 @@
+{
+  "name": "micro_nota",
+  "version": "1.0.0",
+  "description": "Un microservicio de notas",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb"
+  ],
+  "author": "jorge mujica <riontdev@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.12",
+    "nodemon": "^1.17.3"
+  }
+}
