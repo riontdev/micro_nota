@@ -29,8 +29,8 @@ app.get('/', routeHelpers.testApi, (req, res, next) => {
 app.use('/api', apiRouter);
 app.use('/estudiante', estudianteRouter);
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+app.listen(80, function () {
+    console.log('Example app listening on port 80!')
 });
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));

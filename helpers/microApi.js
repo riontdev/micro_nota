@@ -12,7 +12,6 @@ let testApi = (req, res, next) => {
     };
     return request(options)
         .then((response) => {
-            console.log(response)
             req = response;
             return next();
         })
