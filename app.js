@@ -6,7 +6,7 @@ const apiRouter = require('./router/apiRouter')
 const estudianteRouter = require('./router/estudianteRouter')
 const routeHelpers = require('./helpers/microApi');
 //DB setup
-mongoose.connect('mongodb://mongo:27017')
+mongoose.connect('mongodb://admin:admin@ds235609.mlab.com:35609/micro_nota')
 const db = mongoose.connection
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,8 +29,11 @@ app.get('/', routeHelpers.testApi, (req, res, next) => {
 app.use('/api', apiRouter);
 app.use('/estudiante', estudianteRouter);
 
-app.listen(80, function () {
+app.listen(8080, function () {
     console.log('Example app listening on port 80!')
 });
+
+
+
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
